@@ -4,16 +4,19 @@ import requests
 from discord import Embed, SyncWebhook
 from datetime import datetime, timezone
 
-#* Discord webhook URL
+#* Discord Webhook URL
 DISCORD_WEBHOOK_URL = os.getenv('DISCORD_WEBHOOK_URL')
 
-#* Steam app id
+#* Steam App ID
 STEAM_APP_ID = os.getenv('STEAM_APP_ID')
 
 #* Steam API Key
 STEAM_API_KEY = os.getenv("STEAM_API_KEY")
 
-#* File to store the last review timestamp or ID
+#* How long between each refresh
+REPEAT_SECONDS = int(os.getenv("REPEAT_SECONDS", "60"))
+
+#* File to store the last refreshed timestamp
 TIMESTAMP_FILE = os.getenv("TIMESTAMP_FILE", 'timestamp.txt')
 
 def get_steam_user(steam_user_id, api_key):
@@ -131,4 +134,4 @@ if not DISCORD_WEBHOOK_URL:
 
 while True:
     check_new_reviews()
-    time.sleep(60)
+    time.sleep(REPEAT_SECONDS)
