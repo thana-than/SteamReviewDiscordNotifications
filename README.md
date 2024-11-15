@@ -2,6 +2,7 @@
 
 ## Required Environment Variables
 `DISCORD_WEBHOOK_URL` [Your Discord Channel's Webhook.](https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks)
+
 `STEAM_APP_ID` [Your Game's Steam App ID.](https://steamdb.info/apps/)
 
 ## Optional Environment Variables
