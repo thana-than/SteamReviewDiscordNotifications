@@ -1,4 +1,5 @@
 # A dockerized Python script that polls Steam for new reviews, then sends the new reviews to Discord via Webhook.
+https://hub.docker.com/r/thanathan1228/steamreviewdiscordnotifications
 ```
 docker run \
 -e DISCORD_WEBHOOK_URL='{your_discord_webhook}' \
